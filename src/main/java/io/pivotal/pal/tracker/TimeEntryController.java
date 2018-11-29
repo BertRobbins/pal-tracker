@@ -33,7 +33,7 @@ public class TimeEntryController {
     }
 
     @GetMapping("/time-entries/{timeEntryId}")
-    public ResponseEntity<TimeEntry> read(@PathVariable long timeEntryId) {
+    public ResponseEntity<TimeEntry> read(@PathVariable("timeEntryId") long timeEntryId) {
 
         TimeEntry _retentry = _invrep.find(timeEntryId);
 
@@ -52,7 +52,7 @@ public class TimeEntryController {
     }
 
     @PutMapping("/time-entries/{timeEntryId}")
-    public ResponseEntity update(@PathVariable long timeEntryId,@RequestBody TimeEntry expected) {
+    public ResponseEntity update(@PathVariable("timeEntryId") long timeEntryId,@RequestBody TimeEntry expected) {
         this.timeEntryId = timeEntryId;
         this.expected = expected;
 
@@ -66,7 +66,7 @@ public class TimeEntryController {
     }
 
     @DeleteMapping("/time-entries/{timeEntryId}")
-    public ResponseEntity<TimeEntry> delete(@PathVariable long timeEntryId) {
+    public ResponseEntity<TimeEntry> delete(@PathVariable("timeEntryId") long timeEntryId) {
 
         _invrep.delete(timeEntryId);
 
