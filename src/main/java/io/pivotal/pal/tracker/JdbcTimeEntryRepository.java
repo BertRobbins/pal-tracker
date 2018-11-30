@@ -58,6 +58,9 @@ public class JdbcTimeEntryRepository implements TimeEntryRepository {
 
             timeEntry.setId(autoIncKeyFromApi);
 
+            _conn.close();
+            _conn = null;
+
 
         } catch (SQLException e) {
             e.printStackTrace();
@@ -93,7 +96,8 @@ public class JdbcTimeEntryRepository implements TimeEntryRepository {
                 }
 
             }
-
+            _conn.close();
+            _conn = null;
 
         } catch (SQLException e) {
             e.printStackTrace();
@@ -124,6 +128,8 @@ public class JdbcTimeEntryRepository implements TimeEntryRepository {
             statement.setLong(5, id);
 
             statement.execute();
+            _conn.close();
+            _conn = null;
 
             return find(id);
 
@@ -151,6 +157,8 @@ public class JdbcTimeEntryRepository implements TimeEntryRepository {
 
             statement.execute("DELETE FROM time_entries WHERE id = "+id );
 
+            _conn.close();
+            _conn = null;
 
         } catch (SQLException e) {
             e.printStackTrace();
@@ -187,6 +195,8 @@ public class JdbcTimeEntryRepository implements TimeEntryRepository {
 
             }
 
+            _conn.close();
+            _conn = null;
 
         } catch (SQLException e) {
             e.printStackTrace();
