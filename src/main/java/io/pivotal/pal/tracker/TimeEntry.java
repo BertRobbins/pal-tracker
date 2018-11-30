@@ -50,6 +50,23 @@ public class TimeEntry {
     }
 
     private long id;
+
+    public void setProjectId(long projectId) {
+        this.projectId = projectId;
+    }
+
+    public void setUserId(long userId) {
+        this.userId = userId;
+    }
+
+    public void setDate(LocalDate date) {
+        this.date = date;
+    }
+
+    public void setHours(int hours) {
+        this.hours = hours;
+    }
+
     private long projectId;
     private long userId;
     private LocalDate date;

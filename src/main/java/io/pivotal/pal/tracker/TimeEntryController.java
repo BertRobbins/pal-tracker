@@ -18,10 +18,14 @@ public class TimeEntryController {
     private long timeEntryId;
     private TimeEntry expected;
 
-    @Autowired
-    public TimeEntryController(TimeEntryRepository timeEntryRepository) {
-        _invrep = timeEntryRepository;
+   public TimeEntryController(TimeEntryRepository timeEntryRepository) {
+       _invrep = timeEntryRepository;
     }
+
+//    @Autowired
+//    public TimeEntryController(JdbcTimeEntryRepository timeEntryRepository) {
+//        _invrep = timeEntryRepository;
+//    }
 
     @PostMapping("/time-entries")
     public ResponseEntity create(@RequestBody TimeEntry entry) {
